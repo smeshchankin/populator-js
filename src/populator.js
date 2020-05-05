@@ -1,3 +1,5 @@
+'use strict';
+
 window.populator = (function() {
     let populator = {
         generateId: function(prefix) {
