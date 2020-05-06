@@ -20,15 +20,15 @@ window.populator = (function() {
     };
 
     function populateFromObject(elem, obj) {
-        Object.keys(data).forEach(function(key) {
-            let value = data[key];
+        Object.keys(obj).forEach(function(key) {
+            let value = obj[key];
             elem.innerHTML = elem.innerHTML.replace('{{' + key + '}}', value);
         });
     }
 
     function populateFromArray(template, arr) {
         let parentElem = template.parentElement;
-        parentElem.removeChild();
+        parentElem.removeChild(template);
 
         for (let i = 0; i < arr.length; i++) {
             let elem = template.cloneNode(true);

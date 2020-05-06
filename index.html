@@ -14,8 +14,25 @@
         <button type="submit">{{buttonName}}</button>
     </form>
 
+    <h3>Users list</h3>
+    <ul>
+        <li class="user">{{id}}. {{login}}</li>
+    </ul>
+
     <script>
         populator.populate('#form', {username: 'Sergey', password: 'secret', buttonName: 'Sign in'});
+
+        let users = [
+            { id: 1, login: 'Sergey' },
+            { id: 2, login: 'Andrey' },
+            { id: 3, login: 'Kirill' },
+            { id: 4, login: 'Anton' },
+            { id: 5, login: 'Vadim' },
+            { id: 6, login: 'Ruslan' },
+            { id: 7, login: 'Boris' },
+            { id: 8, login: 'Oleg' }
+        ];
+        populator.populate('.user', users);
     </script>
 </body>
 </html>
