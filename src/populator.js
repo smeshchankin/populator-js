@@ -7,7 +7,7 @@ window.populator = (function() {
         },
         populate: function(templateSelector, data) {
             let template = document.querySelector(templateSelector);
-            if (!data || template) {
+            if (!data || !template) {
                 return;
             }
 
