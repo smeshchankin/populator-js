@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="src/populator.js"></script>
     <title>Populator JS (tests)</title>
 </head>
 <body>
+    <h1>Examples / Tests</h1>
     <form id="form">
         <h3 class="login-form">Login data</h3>
         <input type="text" id="username" placeholder="Username" value="{{username}}" />
@@ -19,6 +19,7 @@
         <li class="user">{{id}}. {{login}}</li>
     </ul>
 
+    <script src="populator.js"></script>
     <script>
         populator.populate('#form', {username: 'Sergey', password: 'secret', buttonName: 'Sign in'});
 
