@@ -7,6 +7,7 @@
 </head>
 <body>
     <h1>Examples / Tests</h1>
+    <h2>Test 1. Populate object</h2>
     <form id="form">
         <h3 class="login-form">Login data</h3>
         <input type="text" id="username" placeholder="Username" value="{{username}}" />
@@ -14,16 +15,24 @@
         <button type="submit">{{buttonName}}</button>
     </form>
 
+    <h2>Test 2. Populate list</h2>
     <h3>Users list</h3>
     <ul>
         <li class="user">{{id}}. {{login}}</li>
     </ul>
 
+    <h2>Test 3. Populate template attributes</h2>
+    <table>
+        <tr style="height: 50px;">
+            <td class="cell" style="width: 50px; background-color: {{color}}">&nbsp;</td>
+        </tr>
+    </table>
+
     <script src="populator.js"></script>
     <script>
         populator.populate('#form', {username: 'Sergey', password: 'secret', buttonName: 'Sign in'});
 
-        let users = [
+        const users = [
             { id: 1, login: 'Sergey' },
             { id: 2, login: 'Andrey' },
             { id: 3, login: 'Kirill' },
@@ -34,6 +43,13 @@
             { id: 8, login: 'Oleg' }
         ];
         populator.populate('.user', users);
+
+        const colors = [
+            { color: 'red' },
+            { color: 'green' },
+            { color: 'blue' }
+        ];
+        populator.populate('.cell', colors);
     </script>
 </body>
 </html>

@@ -20,10 +20,11 @@ window.populator = (function() {
     };
 
     function populateFromObject(elem, obj) {
-        Object.keys(obj).forEach(function(key) {
-            let value = obj[key];
-            elem.innerHTML = elem.innerHTML.replace('{{' + key + '}}', value);
-        });
+        for (let idx = 0; idx < elem.attributes.length; idx++) {
+            const attr = elem.attributes[idx];
+            attr.value = fillValue(attr.value, obj);
+        }
+        elem.innerHTML = fillValue(elem.innerHTML, obj);
     }
 
     function populateFromArray(template, arr) {
@@ -35,6 +36,14 @@ window.populator = (function() {
             populateFromObject(elem, arr[i]);
             parentElem.appendChild(elem);
         }
+    }
+
+    function fillValue(value, obj) {
+        let result = value;
+        Object.keys(obj).forEach(function(key) {
+            result = result.replace('{{' + key + '}}', obj[key]);
+        });
+        return result;
     }
 
     return populator;
