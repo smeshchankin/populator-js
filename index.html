@@ -28,6 +28,12 @@
         </tr>
     </table>
 
+    <h2>Test 4. Populate from JSON</h2>
+    <h3>Products list</h3>
+    <ul data-json="products.json">
+        <li class="product">{{id}}. {{name}}</li>
+    </ul>
+
     <script src="populator.js"></script>
     <script>
         populator.populate('#form', {username: 'Sergey', password: 'secret', buttonName: 'Sign in'});
@@ -50,6 +56,8 @@
             { color: 'blue' }
         ];
         populator.populate('.cell', colors);
+
+        populator.populateFromJson();
     </script>
 </body>
 </html>

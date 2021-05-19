@@ -16,6 +16,15 @@ window.populator = (function() {
             } else {
                 populateFromObject(template, data)
             }
+        },
+        populateFromJson: function() {
+            const jsonElems = document.querySelectorAll('[data-json]');
+            for (let i = 0; i < jsonElems.length; i++) {
+                console.log("JSON elements: #" + i);
+                const filename = jsonElems[i].getAttribute('data-json');
+                console.log("JSON filename: " + filename);
+                console.dir(jsonElems[i]);
+            }
         }
     };
 
