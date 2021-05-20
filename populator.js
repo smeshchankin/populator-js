@@ -17,13 +17,12 @@ window.populator = (function() {
                 populateFromObject(template, data)
             }
         },
-        populateFromJson: function() {
+        populateFromJson: async function() {
             const jsonElems = document.querySelectorAll('[data-json]');
             for (let i = 0; i < jsonElems.length; i++) {
-                console.log("JSON elements: #" + i);
                 const filename = jsonElems[i].getAttribute('data-json');
-                console.log("JSON filename: " + filename);
-                console.dir(jsonElems[i]);
+                const data = await getData(filename);
+                populateFromArray(jsonElems[i], data);
             }
         }
     };
@@ -53,6 +52,14 @@ window.populator = (function() {
             result = result.replace('{{' + key + '}}', obj[key]);
         });
         return result;
+    }
+
+    async function getData(url) {
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error(`Can\'t read data from ${url}. Status code: ${response.status}`);
+        }
+        return await response.json();
     }
 
     return populator;
