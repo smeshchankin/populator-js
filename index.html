@@ -34,6 +34,16 @@
         <li data-json="products.json" class="product">{{id}}. {{name}}</li>
     </ul>
 
+    <h2>Test 5. Populate Tree</h2>
+    <h3>Catalog</h3>
+    <ul class="catalog" data-tree>
+        <li data-node>
+            <span>{{name}}</span>
+            <ul data-content></ul>
+        </li>
+        <li data-leaf>{{name}}</li>
+    </ul>
+
     <script src="populator.js"></script>
     <script>
         populator.populate('#form', {username: 'Sergey', password: 'secret', buttonName: 'Sign in'});
