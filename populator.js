@@ -24,6 +24,12 @@ window.populator = (function() {
                 const data = await getData(filename);
                 populateFromArray(jsonElems[i], data);
             }
+        },
+        populateTree: function(templateSelector, data) {
+            let template = document.querySelector(templateSelector);
+            if (!data || !template) {
+                return;
+            }
         }
     };
 

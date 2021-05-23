@@ -68,6 +68,22 @@
         populator.populate('.cell', colors);
 
         populator.populateFromJson();
+
+        const catalog = [
+            { name: 'Water' },
+            { name: 'Coffee' },
+            { name: 'Tea', nodes: [
+                { name: 'Black Tea' },
+                { name: 'White Tea' },
+                { name: 'Green Tea', nodes: [
+                    { name: 'Sencha' },
+                    { name: 'Gyokuro' },
+                    { name: 'Matcha' },
+                    { name: 'Pi Lo Chun' }
+                ] }
+            ] }
+        ];
+        populator.populateTree('.catalog', catalog);
     </script>
 </body>
 </html>
