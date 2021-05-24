@@ -30,6 +30,11 @@ window.populator = (function() {
             if (!data || !template) {
                 return;
             }
+
+            const nodeElems = template.querySelector('[data-node]');
+            const contElement = nodeElems.querySelector('[data-content]');
+            const leafElems = template.querySelector('[data-leaf]');
+
         }
     };
 
