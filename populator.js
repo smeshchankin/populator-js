@@ -31,11 +31,26 @@ window.populator = (function() {
                 return;
             }
 
+            const parentElem = template.parentElement;
             const nodeElems = template.querySelector('[data-node]');
             const contElement = nodeElems.querySelector('[data-content]');
             const leafElems = template.querySelector('[data-leaf]');
 
-            let parentElem = template.parentElement;
+            for (let idx = 0; idx < data.length; idx++) {
+                const item = data[idx];
+                if (item.nodes !== undefined && item.nodes !== null) {
+                    const elem = nodeElems.cloneNode(true);
+                    populateFromObject(elem, item);
+                    parentElem.appendChild(elem);
+
+                    // recursion for item.nodes
+                } else {
+                    const elem = leafElems.cloneNode(true);
+                    populateFromObject(elem, item);
+                    parentElem.appendChild(elem);
+                }
+            }
+
             parentElem.removeChild(template);
         }
     };
