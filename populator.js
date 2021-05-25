@@ -35,6 +35,8 @@ window.populator = (function() {
             const contElement = nodeElems.querySelector('[data-content]');
             const leafElems = template.querySelector('[data-leaf]');
 
+            let parentElem = template.parentElement;
+            parentElem.removeChild(template);
         }
     };
 
