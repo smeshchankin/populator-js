@@ -36,24 +36,28 @@ window.populator = (function() {
             const contElement = nodeElems.querySelector('[data-content]');
             const leafElems = template.querySelector('[data-leaf]');
 
-            for (let idx = 0; idx < data.length; idx++) {
-                const item = data[idx];
-                if (item.nodes !== undefined && item.nodes !== null) {
-                    const elem = nodeElems.cloneNode(true);
-                    populateFromObject(elem, item);
-                    parentElem.appendChild(elem);
-
-                    // recursion for item.nodes
-                } else {
-                    const elem = leafElems.cloneNode(true);
-                    populateFromObject(elem, item);
-                    parentElem.appendChild(elem);
-                }
-            }
+            populateTreeChildren(data, parentElem, nodeElems, leafElems);
 
             parentElem.removeChild(template);
         }
     };
+
+    function populateTreeChildren(list, parentElem, nodeElems, leafElems) {
+        for (let idx = 0; idx < list.length; idx++) {
+            const item = list[idx];
+            if (item.nodes !== undefined && item.nodes !== null) {
+                const elem = nodeElems.cloneNode(true);
+                populateFromObject(elem, item);
+                parentElem.appendChild(elem);
+
+                populateTreeChildren(item.nodes, parentElem, nodeElems, leafElems)
+            } else {
+                const elem = leafElems.cloneNode(true);
+                populateFromObject(elem, item);
+                parentElem.appendChild(elem);
+            }
+        }
+    }
 
     function populateFromObject(elem, obj) {
         for (let idx = 0; idx < elem.attributes.length; idx++) {
