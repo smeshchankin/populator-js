@@ -33,9 +33,7 @@ window.populator = (function() {
 
             const parentElem = template.parentElement;
             const nodeElems = template.querySelector('[data-node]');
-            const contElement = nodeElems.querySelector('[data-content]');
             const leafElems = template.querySelector('[data-leaf]');
-
             populateTreeChildren(data, parentElem, nodeElems, leafElems);
 
             parentElem.removeChild(template);
@@ -49,8 +47,9 @@ window.populator = (function() {
                 const elem = nodeElems.cloneNode(true);
                 populateFromObject(elem, item);
                 parentElem.appendChild(elem);
+                const contElement = elem.querySelector('[data-content]');
 
-                populateTreeChildren(item.nodes, parentElem, nodeElems, leafElems)
+                populateTreeChildren(item.nodes, contElement, nodeElems, leafElems)
             } else {
                 const elem = leafElems.cloneNode(true);
                 populateFromObject(elem, item);
