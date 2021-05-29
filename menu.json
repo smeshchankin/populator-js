@@ -1,0 +1,32 @@
+[
+    { "name": "Home", "url": "#" },
+    { "name": "About", "nodes": [
+        { "name" : "Main page", "url": "https://gitub.com/smeshchankin" },
+        { "name" : "Curriculum Vitae", "url": "https://github.com/smeshchankin/cv" },
+        { "name" : "All Project", "url": "https://github.com/smeshchankin?tab=repositories" }
+    ]},
+    { "name": "Projects", "nodes": [
+        { "name" : "Slicing", "nodes": [
+            { "name": "Delivery Food", "url": "http://smeshchankin.github.io/delivery-food" },
+            { "name": "Mortal Kombat", "url": "http://smeshchankin.github.io/slicing-mortal-kombat" },
+            { "name": "Will Berries", "url": "http://smeshchankin.github.io/slicing-willberries" },
+            { "name": "Pikadu", "url": "http://smeshchankin.github.io/slicing-pikadu" },
+            { "name": "SpaceX", "url": "http://smeshchankin.github.io/slicing-spacex" },
+            { "name": "Distance", "url": "http://smeshchankin.github.io/slicing-distance" },
+            { "name": "Ghostbusters", "url": "http://smeshchankin.github.io/slicing-ghostbusters" },
+            { "name": "Star Wars", "url": "http://smeshchankin.github.io/slicing-star-wars" },
+        ]},
+        { "name" : "Java", "nodes": [
+            { "name" : "7 Wonders", "url": "https://github.com/smeshchankin/7-wonders" },
+            { "name" : "Microservices", "url": "https://github.com/smeshchankin/microservices" },
+            { "name" : "Lines Code Counter", "url": "https://github.com/smeshchankin/codekata-lcc" },
+        ]},
+        { "name" : "Java Script", "nodes": [
+            { "name" : "Need For Speed", "url": "https://github.com/smeshchankin/need-for-speed" },
+            { "name" : "web Digital Stream", "url": "https://github.com/smeshchankin/web-digital-stream" },
+            { "name" : "Wallet", "url": "https://github.com/smeshchankin/wallet" },
+            { "name" : "Keyboard", "url": "https://github.com/smeshchankin/keyboard" }
+        ] },
+        { "name" : "React JS" }
+    ]}
+]
