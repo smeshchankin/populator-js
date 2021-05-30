@@ -14,12 +14,12 @@
             { "name": "SpaceX", "url": "http://smeshchankin.github.io/slicing-spacex" },
             { "name": "Distance", "url": "http://smeshchankin.github.io/slicing-distance" },
             { "name": "Ghostbusters", "url": "http://smeshchankin.github.io/slicing-ghostbusters" },
-            { "name": "Star Wars", "url": "http://smeshchankin.github.io/slicing-star-wars" },
+            { "name": "Star Wars", "url": "http://smeshchankin.github.io/slicing-star-wars" }
         ]},
         { "name" : "Java", "nodes": [
             { "name" : "7 Wonders", "url": "https://github.com/smeshchankin/7-wonders" },
             { "name" : "Microservices", "url": "https://github.com/smeshchankin/microservices" },
-            { "name" : "Lines Code Counter", "url": "https://github.com/smeshchankin/codekata-lcc" },
+            { "name" : "Lines Code Counter", "url": "https://github.com/smeshchankin/codekata-lcc" }
         ]},
         { "name" : "Java Script", "nodes": [
             { "name" : "Need For Speed", "url": "https://github.com/smeshchankin/need-for-speed" },
