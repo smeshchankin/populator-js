@@ -22,11 +22,16 @@ window.populator = (function() {
             for (let i = 0; i < jsonElems.length; i++) {
                 const filename = jsonElems[i].getAttribute('data-json');
                 const data = await getData(filename);
-                populateFromArray(jsonElems[i], data);
+                if (jsonElems[i].getAttribute('data-tree')) {
+                    this.populateTree(jsonElems[i], data);
+                } else {
+                    populateFromArray(jsonElems[i], data);
+                }
             }
         },
         populateTree: function(templateSelector, data) {
-            let template = document.querySelector(templateSelector);
+            let template = typeof templateSelector === 'string' ?
+                document.querySelector(templateSelector) : templateSelector;
             if (!data || !template) {
                 return;
             }
