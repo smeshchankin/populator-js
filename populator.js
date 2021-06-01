@@ -23,27 +23,30 @@ window.populator = (function() {
                 const filename = jsonElems[i].getAttribute('data-json');
                 const data = await getData(filename);
                 if (jsonElems[i].getAttribute('data-tree')) {
-                    this.populateTree(jsonElems[i], data);
+                    populateTree(jsonElems[i], data);
                 } else {
                     populateFromArray(jsonElems[i], data);
                 }
             }
         },
         populateTree: function(templateSelector, data) {
-            let template = typeof templateSelector === 'string' ?
-                document.querySelector(templateSelector) : templateSelector;
+            let template = document.querySelector(templateSelector);
             if (!data || !template) {
                 return;
             }
 
-            const parentElem = template.parentElement;
-            const nodeElems = template.querySelector('[data-node]');
-            const leafElems = template.querySelector('[data-leaf]');
-            populateTreeChildren(data, parentElem, nodeElems, leafElems);
-
-            parentElem.removeChild(template);
+            populateTree(template, data);
         }
     };
+
+    function populateTree(template, data) {
+        const parentElem = template.parentElement;
+        const nodeElems = template.querySelector('[data-node]');
+        const leafElems = template.querySelector('[data-leaf]');
+        populateTreeChildren(data, parentElem, nodeElems, leafElems);
+
+        parentElem.removeChild(template);
+    }
 
     function populateTreeChildren(list, parentElem, nodeElems, leafElems) {
         for (let idx = 0; idx < list.length; idx++) {
