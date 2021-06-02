@@ -22,7 +22,8 @@ window.populator = (function() {
             for (let i = 0; i < jsonElems.length; i++) {
                 const filename = jsonElems[i].getAttribute('data-json');
                 const data = await getData(filename);
-                if (jsonElems[i].getAttribute('data-tree')) {
+                const dataTree = jsonElems[i].getAttribute('data-tree');
+                if (dataTree !== undefined && dataTree !== null) {
                     populateTree(jsonElems[i], data);
                 } else {
                     populateFromArray(jsonElems[i], data);
