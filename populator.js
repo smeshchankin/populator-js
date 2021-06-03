@@ -44,21 +44,25 @@ window.populator = (function() {
         const parentElem = template.parentElement;
         const nodeElems = template.querySelector('[data-node]');
         const leafElems = template.querySelector('[data-leaf]');
-        populateTreeChildren(data, parentElem, nodeElems, leafElems);
+        populateTreeChildren(data, parentElem, template, nodeElems, leafElems);
 
         parentElem.removeChild(template);
     }
 
-    function populateTreeChildren(list, parentElem, nodeElems, leafElems) {
+    function populateTreeChildren(list, parentElem, siblingElem, nodeElems, leafElems) {
         for (let idx = 0; idx < list.length; idx++) {
             const item = list[idx];
             if (item.nodes !== undefined && item.nodes !== null) {
                 const elem = nodeElems.cloneNode(true);
                 populateFromObject(elem, item);
-                parentElem.appendChild(elem);
+                if (!!siblingElem) {
+                    parentElem.insertBefore(elem, siblingElem);
+                } else {
+                    parentElem.appendChild(elem);
+                }
                 const contElement = elem.querySelector('[data-content]');
 
-                populateTreeChildren(item.nodes, contElement, nodeElems, leafElems)
+                populateTreeChildren(item.nodes, contElement, null, nodeElems, leafElems)
             } else {
                 const elem = leafElems.cloneNode(true);
                 populateFromObject(elem, item);
