@@ -66,7 +66,11 @@ window.populator = (function() {
             } else {
                 const elem = leafElems.cloneNode(true);
                 populateFromObject(elem, item);
-                parentElem.appendChild(elem);
+                if (!!siblingElem) {
+                    parentElem.insertBefore(elem, siblingElem);
+                } else {
+                    parentElem.appendChild(elem);
+                }
             }
         }
     }
