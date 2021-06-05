@@ -22,11 +22,25 @@
             { "name" : "Lines Code Counter", "url": "https://github.com/smeshchankin/codekata-lcc" }
         ]},
         { "name" : "Java Script", "nodes": [
+            { "name" : "Populator.js (this project)", "url": "https://github.com/smeshchankin/populator-js" },
             { "name" : "Need For Speed", "url": "https://github.com/smeshchankin/need-for-speed" },
-            { "name" : "web Digital Stream", "url": "https://github.com/smeshchankin/web-digital-stream" },
+            { "name": "Pokemon", "url": "http://smeshchankin.github.io/pokemon" },
+            { "name" : "Web Digital Stream", "url": "https://github.com/smeshchankin/web-digital-stream" },
             { "name" : "Wallet", "url": "https://github.com/smeshchankin/wallet" },
-            { "name" : "Keyboard", "url": "https://github.com/smeshchankin/keyboard" }
+            { "name" : "Keyboard", "url": "https://github.com/smeshchankin/keyboard" },
+            { "name" : "Test.js", "url": "http://smeshchankin.github.io/test-js" }
         ] },
-        { "name" : "React JS" }
+        { "name" : "JSON", "nodes": [
+            { "name" : "Star Wars API (swapi)", "url": "https://github.com/smeshchankin/swapi" }
+        ] },
+        { "name" : "React JS", "nodes": [
+            { "name" : "ToDo List", "url": "https://smeshchankin.github.io/todo" },
+            { "name" : "Money Calculator", "url": "https://smeshchankin.github.io/money-calculator"},
+            { "name" : "Star Wars Info", "url": "https://github.com/smeshchankin/star-wars-info" }
+        ] },
+        { "name" : "Vue", "nodes": [
+            { "name" : "Calculator", "url": "http://smeshchankin.github.io/vue-calc" },
+            { "name" : "ToDo List", "url": "http://smeshchankin.github.io/vue-todo" }
+        ] }
     ]}
 ]
