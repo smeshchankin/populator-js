@@ -28,6 +28,10 @@ window.populator = (function() {
                 } else {
                     populateFromArray(jsonElems[i], data);
                 }
+                const postHandler = jsonElems[i].getAttribute('data-post-json');
+                if (!!postHandler) {
+                    postHandler();
+                }
             }
         },
         populateTree: function(templateSelector, data) {
